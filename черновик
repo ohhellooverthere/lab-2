@@ -3,11 +3,57 @@
 #include "pch.h"
 #include <iostream>
 using namespace std;
+void proverka_pal(char str[], int *pk);// если к = 0 , конец,если к =1, идем дальше 
+
 
 int main()
 {
+	setlocale(LC_ALL, "rus");
 	char str[80];
 	gets_s(str);
-	cout << str;
-}
+	int k=0; // если к = 0, конец, если к = 1, идем дальше
+	proverka_pal(str, &k);
+		if (k == 0)
+		{
+			cout << "ничего делать не нужно, число и так палиндром";
+		}
+		else
+		{
 
+		}
+
+/*
+	for (int i = 0; i < strlen(str); i++)
+	{
+		cout << str[i] << endl;
+	}
+	*/
+	
+}
+void proverka_pal(char str[], int *pk)// если к = 0 , конец,если к =1, идем дальше 
+{
+	int i, j;
+	int identify = 1;// проверка палиндром или нет
+	int *pidentify = &identify;
+	int len = strlen(str) - 1;
+
+	for (i = 0,j=len; i <= strlen(str) / 2; ++i, --j)
+	{
+		
+		if (str[j] != str[i])
+		{
+			*pidentify = 0; break;
+		}
+	}
+	if (identify == 1)
+	{
+		cout << "string is a palindrom" << endl;
+		*pk = 0;
+	}
+	else
+	{
+		cout << "string is not a palindrom" << endl;
+		*pk = 1;
+	}
+
+}
