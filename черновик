@@ -1,0 +1,13 @@
+/*Дано рядок. Дописати до нього мінімальну кількість символів так, щоб він став
+паліндромом.*/
+#include "pch.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	char str[80];
+	gets_s(str);
+	cout << str;
+}
+
